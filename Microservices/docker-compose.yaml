@@ -1,0 +1,29 @@
+version: '2'
+services:
+  service_a:
+    image: user
+    networks:
+      - doc_net
+    ports:
+      - 3000:3000
+  service_b:
+    image: product
+    networks:
+      - doc_net
+    ports:
+      - 3001:3001
+  service_c:
+    image: gateway
+    networks:
+      - doc_net
+    ports:
+      - 3002:3002
+  service_d:
+    image: order
+    networks:
+      - doc_net
+    ports:
+      - 3003:3003
+networks:
+  doc_net:
+    driver: bridge
